@@ -62,4 +62,31 @@ public class AssignmentTwo {
         Visitor checkVisitor = new Visitor("Tom Brown", 40, "789 Maple Ave", "Standard", false);
         System.out.println("Is Tom Brown in the ride history? " + ride.checkVisitorFromHistory(checkVisitor));
     }
+    public static void partFive() {
+    Employee employee = new Employee("John Doe", 30, "123 Park Lane", "Ride Operator", 45000);
+    
+
+    Ride ride = new Ride("Roller Coaster", "Thrill", employee, 5);
+    
+
+    for (int i = 1; i <= 10; i++) {
+        Visitor visitor = new Visitor("Visitor " + i, 20 + i, "Address " + i, "Standard", false);
+        ride.addVisitorToQueue(visitor);
+    }
+    
+
+    System.out.println("Visitors in the queue:");
+    ride.printQueue();
+    
+ 
+    ride.runOneCycle();
+    
+   
+    System.out.println("Visitors in the queue after one cycle:");
+    ride.printQueue();
+    
+
+    System.out.println("Visitors in the ride history:");
+    ride.printRideHistory();
+}
 }
