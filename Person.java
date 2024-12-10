@@ -1,21 +1,21 @@
-// Person.java
-public class Person {
+// Abstract class Person
+public abstract class Person {
     private String name;
     private int age;
-    private String gender;
+    private String address;
 
     // Default constructor
     public Person() {
         this.name = "Unknown";
         this.age = 0;
-        this.gender = "Unknown";
+        this.address = "Unknown";
     }
 
     // Parameterized constructor
-    public Person(String name, int age, String gender) {
+    public Person(String name, int age, String address) {
         this.name = name;
         this.age = age;
-        this.gender = gender;
+        this.address = address;
     }
 
     // Getters and setters
@@ -35,11 +35,11 @@ public class Person {
         this.age = age;
     }
 
-    public String getGender() {
-        return gender;
+    public String getAddress() {
+        return address;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
