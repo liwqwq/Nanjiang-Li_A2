@@ -1,0 +1,4 @@
+name,age,address,TicketType,isVIP
+S1mple,30,New York,Standard,Yes
+Snax,25,Los Angeles,VIP,No
+Donk,19,Chicago,Standard,Yes
