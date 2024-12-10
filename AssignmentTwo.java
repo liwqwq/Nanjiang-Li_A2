@@ -2,11 +2,11 @@ public class AssignmentTwo {
     public static void main(String[] args) {
         // Create objects for testing
         Employee employee = new Employee("John Cash", 30, "566 Park Lane", "Ride Operator", 4500);
-        Visitor visitor1 = new Visitor("Jane Smith", 25, "456 Oak Street", "VIP", true);
-        Visitor visitor2 = new Visitor("Tom Brown", 40, "789 Maple Ave", "Standard", false);
-        Visitor visitor3 = new Visitor("Sarah Johnson", 30, "101 Pine Street", "Standard", false);
-        Visitor visitor4 = new Visitor("Mark Lee", 22, "202 Cedar Road", "VIP", true);
-        Visitor visitor5 = new Visitor("Emily Davis", 27, "303 Birch Blvd", "Standard", false);
+        Visitor visitor1 = new Visitor("IM", 28, "612 Apple St", "VIP", true);
+Visitor visitor2 = new Visitor("Niko", 22, "455 Banana Ave", "Standard", false);
+Visitor visitor3 = new Visitor("Ropz", 35, "039 Cherry Blvd", "Standard", false);
+Visitor visitor4 = new Visitor("Wonderful", 22, "777 Date Rd", "VIP", true);
+Visitor visitor5 = new Visitor("JL", 30, "205 Elderberry Ct", "Standard", false);
         
         // Create a Ride object
         Ride ride = new Ride("Roller Coaster", "Thrill", employee);
@@ -62,16 +62,18 @@ public class AssignmentTwo {
         Visitor checkVisitor = new Visitor("Tom Brown", 40, "789 Maple Ave", "Standard", false);
         System.out.println("Is Tom Brown in the ride history? " + ride.checkVisitorFromHistory(checkVisitor));
     }
+
+    // Method for Part 4B demonstration
     public static void partFourB() {
         // Create a Ride object
         Employee employee = new Employee("John Cash", 30, "566 Park Lane", "Ride Operator", 4500);
         Ride ride = new Ride("Ferris Wheel", "Family", employee);
     
-        // Add tourist
+        // Add visitors to history
         Visitor visitor1 = new Visitor("IM", 28, "612 Apple St", "VIP", true);
         Visitor visitor2 = new Visitor("Niko", 22, "455 Banana Ave", "Standard", false);
         Visitor visitor3 = new Visitor("Ropz", 35, "039 Cherry Blvd", "Standard", false);
-        Visitor visitor4 = new Visitor("Wondeful", 22, "777 Date Rd", "VIP", true);
+        Visitor visitor4 = new Visitor("Wonderful", 22, "777 Date Rd", "VIP", true);
         Visitor visitor5 = new Visitor("JL", 30, "205 Elderberry Ct", "Standard", false);
     
         ride.addVisitorToHistory(visitor1);
@@ -80,7 +82,7 @@ public class AssignmentTwo {
         ride.addVisitorToHistory(visitor4);
         ride.addVisitorToHistory(visitor5);
     
-        // Print tourist list
+        // Print tourist list before sorting
         System.out.println("Visitors before sorting:");
         ride.printRideHistory();
     
@@ -91,6 +93,8 @@ public class AssignmentTwo {
         System.out.println("Visitors after sorting:");
         ride.printRideHistory();
     }
+
+    // Method for Part 5 demonstration
     public static void partFive() {
         // Create an employee object
         Employee employee = new Employee("John Cash", 30, "566 Park Lane", "Ride Operator", 4500);
@@ -116,8 +120,9 @@ public class AssignmentTwo {
         // Print all historical tourists
         System.out.println("Visitors in the ride history:");
         ride.printRideHistory();
-
     }
+
+    // Method for Part 6 demonstration
     public static void partSix() {
         // Create a new Ride object
         Employee employee = new Employee("John Cash", 30, "566 Park Lane", "Ride Operator", 4500);
@@ -127,7 +132,7 @@ public class AssignmentTwo {
         Visitor visitor1 = new Visitor("IM", 28, "612 Apple St", "VIP", true);
         Visitor visitor2 = new Visitor("Niko", 22, "455 Banana Ave", "Standard", false);
         Visitor visitor3 = new Visitor("Ropz", 35, "039 Cherry Blvd", "Standard", false);
-        Visitor visitor4 = new Visitor("Wondeful", 22, "777 Date Rd", "VIP", true);
+        Visitor visitor4 = new Visitor("Wonderful", 22, "777 Date Rd", "VIP", true);
         Visitor visitor5 = new Visitor("JL", 30, "205 Elderberry Ct", "Standard", false);
         
         ride.addVisitorToHistory(visitor1);
@@ -138,8 +143,9 @@ public class AssignmentTwo {
         
         // Export the Visitors to a file
         ride.exportRideHistory("rideHistory.csv");
+        
         // Import tourist history
-        ride.importRideHistory("ridehistory.csv"); 
+        ride.importRideHistory("rideHistory.csv"); 
         
         // Print the number of imported tourists
         System.out.println("Number of visitors in the ride history: " + ride.numberOfVisitors());
