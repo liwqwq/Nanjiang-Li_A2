@@ -1,36 +1,35 @@
-// Employee.java
 public class Employee extends Person {
-    private String employeeId;
-    private String role;
+    private String jobTitle;
+    private double salary;
 
     // Default constructor
     public Employee() {
-        super();  // Call Person's default constructor
-        this.employeeId = "Unknown";
-        this.role = "Unknown";
+        super();
+        this.jobTitle = "Unknown";
+        this.salary = 0.0;
     }
 
     // Parameterized constructor
-    public Employee(String name, int age, String gender, String employeeId, String role) {
-        super(name, age, gender);  // Call Person's constructor
-        this.employeeId = employeeId;
-        this.role = role;
+    public Employee(String name, int age, String address, String jobTitle, double salary) {
+        super(name, age, address);
+        this.jobTitle = jobTitle;
+        this.salary = salary;
     }
 
     // Getters and setters
-    public String getEmployeeId() {
-        return employeeId;
+    public String getJobTitle() {
+        return jobTitle;
     }
 
-    public void setEmployeeId(String employeeId) {
-        this.employeeId = employeeId;
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
     }
 
-    public String getRole() {
-        return role;
+    public double getSalary() {
+        return salary;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 }
