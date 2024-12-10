@@ -7,56 +7,59 @@ public class AssignmentTwo {
         Visitor visitor3 = new Visitor("Sarah Johnson", 30, "101 Pine Street", "Standard", false);
         Visitor visitor4 = new Visitor("Mark Lee", 22, "202 Cedar Road", "VIP", true);
         Visitor visitor5 = new Visitor("Emily Davis", 27, "303 Birch Blvd", "Standard", false);
-
+        
         // Create a Ride object
         Ride ride = new Ride("Roller Coaster", "Thrill", employee);
-
+        
         // Add visitors to the queue
         ride.addVisitorToQueue(visitor1);
         ride.addVisitorToQueue(visitor2);
         ride.addVisitorToQueue(visitor3);
         ride.addVisitorToQueue(visitor4);
         ride.addVisitorToQueue(visitor5);
-
+        
         // Print the queue
         ride.printQueue();
-
+        
         // Remove a visitor from the queue
         ride.removeVisitorFromQueue(visitor3); // Remove Sarah Johnson
-
         // Print the queue after removal
         ride.printQueue();
-
+        
         // Run the ride for one cycle
         ride.runOneCycle(); // Run the ride for the first visitor
-
+        
         // Print the ride history
         ride.printRideHistory();
-
+        
         // Check if a visitor is in the history
         System.out.println("Is Jane Smith in the ride history? " + ride.checkVisitorFromHistory(visitor1));
-
+        
         // Display the number of visitors in the history
         System.out.println("Number of visitors in the ride history: " + ride.numberOfVisitors());
+        
+        // Part 4A demonstration
+        partFourA(ride); // Call the method to demonstrate Part 4A functionality
     }
 
-    // Placeholder methods for other parts of the assignment
-    public void partThree() {
-        // Implement Part 3 logic here
-    }
-    public void partFourA() {
-        // Implement Part 4A logic here
-    }
-    public void partFourB() {
-        // Implement Part 4B logic here
-    }
-    public void partFive() {
-        // Implement Part 5 logic here
-    }
-    public void partSix() {
-        // Implement Part 6 logic here
-    }
-    public void partSeven() {
-        // Implement Part 7 logic here
+    // Method for Part 4A demonstration
+    public static void partFourA(Ride ride) {
+        // Add visitors to the ride history using runOneCycle
+        System.out.println("\nDemonstrating Part 4A:");
+        ride.runOneCycle(); // First visitor
+        ride.runOneCycle(); // Second visitor
+        ride.runOneCycle(); // Third visitor
+        ride.runOneCycle(); // Fourth visitor
+        ride.runOneCycle(); // Fifth visitor
+        
+        // Print the number of visitors in the ride history
+        System.out.println("Number of visitors in the ride history: " + ride.numberOfVisitors());
+        
+        // Print the details of all visitors in the ride history
+        ride.printRideHistory();
+        
+        // Check if a visitor is in the ride history
+        Visitor checkVisitor = new Visitor("Tom Brown", 40, "789 Maple Ave", "Standard", false);
+        System.out.println("Is Tom Brown in the ride history? " + ride.checkVisitorFromHistory(checkVisitor));
     }
 }
