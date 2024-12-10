@@ -1,0 +1,11 @@
+import java.util.Collections;
+
+public class Ride implements RideInterface {
+
+
+
+    public void sortRideHistory() {
+        Collections.sort(rideHistory, new VisitorComparator());
+        System.out.println("Ride history has been sorted.");
+    }
+}
