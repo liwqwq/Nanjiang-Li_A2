@@ -89,4 +89,25 @@ public class AssignmentTwo {
     System.out.println("Visitors in the ride history:");
     ride.printRideHistory();
 }
+    public static void partSix() {
+    // Create a new Ride object
+    Employee employee = new Employee("John Doe", 30, "123 Park Lane", "Ride Operator", 45000);
+    Ride ride = new Ride("Ferris Wheel", "Family", employee);
+    
+    // Add visitors to the ride history
+    Visitor visitor1 = new Visitor("Alice", 28, "123 Apple St", "VIP", true);
+    Visitor visitor2 = new Visitor("Bob", 22, "456 Banana Ave", "Standard", false);
+    Visitor visitor3 = new Visitor("Charlie", 35, "789 Cherry Blvd", "Standard", false);
+    Visitor visitor4 = new Visitor("David", 22, "101 Date Rd", "VIP", true);
+    Visitor visitor5 = new Visitor("Eve", 30, "202 Elderberry Ct", "Standard", false);
+    
+    ride.addVisitorToHistory(visitor1);
+    ride.addVisitorToHistory(visitor2);
+    ride.addVisitorToHistory(visitor3);
+    ride.addVisitorToHistory(visitor4);
+    ride.addVisitorToHistory(visitor5);
+    
+    // Export the Visitors to a file
+    ride.exportRideHistory("rideHistory.txt");
+}
 }
