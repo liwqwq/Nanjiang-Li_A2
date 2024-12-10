@@ -33,7 +33,6 @@ public class Ride implements RideInterface {
     public String getRideType() {
         return rideType;
     }
-
     public void setRideType(String rideType) {
         this.rideType = rideType;
     }
