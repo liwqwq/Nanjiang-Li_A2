@@ -105,7 +105,27 @@ public class Ride implements RideInterface {
     public int numberOfVisitors() {
         return rideHistory.size(); // Return the number of visitors in the history
     }
+public class Ride {
+    private String rideName;
+    private String rideType;
+    private Employee rideOperator;
+    private int maxRider; 
+    private int numOfCycles; 
+    private Queue<Visitor> queue; 
+    private List<Visitor> rideHistory; 
 
+
+    public Ride(String rideName, String rideType, Employee rideOperator, int maxRider) {
+        this.rideName = rideName;
+        this.rideType = rideType;
+        this.rideOperator = rideOperator;
+        this.maxRider = maxRider;
+        this.numOfCycles = 0;
+        this.queue = new LinkedList<>();
+        this.rideHistory = new ArrayList<>();
+    }
+    
+}
     @Override
     public void printRideHistory() {
         if (rideHistory.isEmpty()) {
