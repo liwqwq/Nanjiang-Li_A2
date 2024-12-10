@@ -1,11 +1,12 @@
 import java.util.*;
+
 // Updated Ride class implementing the Queue interface
 public class Ride implements RideInterface {
     private String rideName;
     private String rideType;
     private Employee rideOperator;
     private Queue<Visitor> queue = new LinkedList<>(); // Use LinkedList to implement Queue
-    private List<Visitor> rideHistory = new ArrayList<>();
+    private List<Visitor> rideHistory = new LinkedList<>(); // Use LinkedList for the ride history
 
     // Default constructor
     public Ride() {
@@ -25,28 +26,24 @@ public class Ride implements RideInterface {
     public String getRideName() {
         return rideName;
     }
-
     public void setRideName(String rideName) {
         this.rideName = rideName;
     }
-
     public String getRideType() {
         return rideType;
     }
-
     public void setRideType(String rideType) {
         this.rideType = rideType;
     }
-
     public Employee getRideOperator() {
         return rideOperator;
     }
-
     public void setRideOperator(Employee rideOperator) {
         this.rideOperator = rideOperator;
     }
 
     // Implementing methods from RideInterface
+
     @Override
     public void addVisitorToQueue(Visitor visitor) {
         if (visitor != null) {
@@ -93,12 +90,15 @@ public class Ride implements RideInterface {
 
     @Override
     public void addVisitorToHistory(Visitor visitor) {
-        rideHistory.add(visitor); // Add visitor to the history
+        rideHistory.add(visitor); // Add visitor to the ride history
+        System.out.println(visitor.getName() + " has been added to the ride history.");
     }
 
     @Override
     public boolean checkVisitorFromHistory(Visitor visitor) {
-        return rideHistory.contains(visitor); // Check if the visitor is in the history
+        boolean isInHistory = rideHistory.contains(visitor); // Check if the visitor is in the history
+        System.out.println(visitor.getName() + " is " + (isInHistory ? "in" : "not in") + " the ride history.");
+        return isInHistory;
     }
 
     @Override
@@ -112,8 +112,11 @@ public class Ride implements RideInterface {
             System.out.println("No visitors have ridden the " + rideName);
         } else {
             System.out.println("Visitors who have ridden the " + rideName + ":");
-            for (Visitor visitor : rideHistory) {
-                System.out.println(visitor.getName());
+            Iterator<Visitor> iterator = rideHistory.iterator();
+            while (iterator.hasNext()) {
+                Visitor visitor = iterator.next();
+                System.out.println("Name: " + visitor.getName() + ", Age: " + visitor.getAge() + ", Address: " + visitor.getAddress());
+                System.out.println("Ticket Type: " + visitor.getTicketType() + ", VIP: " + visitor.isVIP());
             }
         }
     }
